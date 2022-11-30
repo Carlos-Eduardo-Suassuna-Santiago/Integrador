@@ -1,0 +1,4 @@
+cor do "sobre nós" =  bg-white
+cor da marca de copy white = .breadcrumbs-custom .rights, .context-dark .rights, .bg-gray-darker .rights, .bg-primary .rights
+cor do slogan abaixo da logo marca do site =  brand__slogan
+cor dos sub-textos (textos menores) = body, color

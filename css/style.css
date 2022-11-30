@@ -163,7 +163,7 @@ body {
 	font-size: 14px;
 	font-weight: 400;
 	line-height: 1.71429;
-	color: #9b9b9c;
+	color: #000000;
 	background-color: grey;
 	-webkit-text-size-adjust: none;
 	-webkit-font-smoothing: subpixel-antialiased;
@@ -624,7 +624,7 @@ hr {
 	font-size: 14px;
 	line-height: 1.2;
 	letter-spacing: .16em;
-	color: #a3a3a3;
+	color: #000000;
 }
 
 /*
@@ -651,7 +651,7 @@ hr {
 	padding: 25px 5px;
 	position: relative;
 	text-align: center;
-	color: #575757;
+	color: #000000;
 }
 
 .box-counter__title {
@@ -7655,7 +7655,7 @@ html .page .group-sm-justify .button {
 }
 
 .breadcrumbs-custom .rights, .context-dark .rights, .bg-gray-darker .rights, .bg-primary .rights {
-	color: #575757;
+	color: #ffffff;
 }
 
 .breadcrumbs-custom .rights a:hover, .context-dark .rights a:hover, .bg-gray-darker .rights a:hover, .bg-primary .rights a:hover {
@@ -7682,7 +7682,7 @@ html .page .group-sm-justify .button {
 * Light Backgrounds
 */
 .bg-white {
-	background-color: #ffffff;
+	background-color: gray;
 }
 
 .bg-white[class*='section-'] + .bg-white[class*='section-'] {
