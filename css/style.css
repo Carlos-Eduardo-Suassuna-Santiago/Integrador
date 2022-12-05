@@ -1563,7 +1563,7 @@ a.box-triangle__aside:hover .box-triangle__image {
 
 .breadcrumbs-custom__path a:hover,
 .breadcrumbs-custom__path li.active {
-	color: #ffffff;
+	color: black;
 }
 
 * + .breadcrumbs-custom__path {
