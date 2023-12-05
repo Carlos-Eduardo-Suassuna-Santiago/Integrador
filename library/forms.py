@@ -9,7 +9,6 @@ class ContactusForm(forms.Form):
 
 
 
-
 class AdminSigupForm(forms.ModelForm):
     class Meta:
         model=User
