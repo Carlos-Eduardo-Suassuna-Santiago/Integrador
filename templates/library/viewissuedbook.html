@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="pt-br" dir="ltr">
   <head>
     <meta charset="utf-8">
     <title></title>
@@ -60,20 +60,20 @@
     {% include "library/navbaradmin.html" %}
     <br>
     <br>
-    <h3 class="p-3 mb-2 bg-success text-white" style = 'font-size: 30px;text-align:center;margin-bottom:0px;'>Issued books to Student</h3>
+    <h3 class="p-3 mb-2 bg-success text-white" style = 'font-size: 30px;text-align:center;margin-bottom:0px;'>Livros emprestados para o aluno</h3>
 
 {% if li%}
     <div class="container">
       <table class="table table-hover table-condensed table-striped table-bordered">
         <thead>
         <tr>
-        <th>Student Name</th>
-        <th>Enrollment</th>
-        <th>Book Name</th>
-        <th>Author</th>
-        <th>Issued</th>
-        <th>Expiry Date</th>
-        <th>Fine</th>
+        <th>Nome do Aluno</th>
+        <th>Matrícula</th>
+        <th>Nome do Livro</th>
+        <th>Autor</th>
+        <th>Emprestado</th>
+        <th>Data de Vencimento</th>
+        <th>Multa</th>
         </tr>
         </thead>
         <tfoot>
@@ -99,7 +99,7 @@
         </table>
     </div>
     {%else%}
-    <h1> 0 book Issued</h1>
+    <h1> Nenhum livro emprestado.</h1>
     {%endif%}
 
     <br><br><br><br><br><br><br><br><br>

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 {% load static %}
-<html lang="en">
+<html lang="pt-br">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Library Management System</title>
+<title>Sistema de Gerenciamento de Biblioteca</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -38,50 +38,32 @@
 {% include "library/navbar.html" %}
 
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-  </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img class="d-block w-100 " height="500px" src="{% static "images/librarybg.jpg" %}" alt="First slide">
     </div>
-    <div class="carousel-item">
-      <img class="d-block w-100 " height="500px" src="{% static "images/librarybg.jpg" %}" alt="Second slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100 " height="500px" src="{% static "images/librarybg.jpg" %}" alt="Third slide">
-    </div>
   </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
 </div>
 
 
 <div class="jumbotron">
-  <h1 style="text-align:center" class="display-4">Library Management System</h1>
-  <p class="lead">A service dedicated to Admin and Student. We provide online resources, professional support
-    and guidance to all our students whenever, and from wherever they have chosen to study.</p>
+  <h1 style="text-align:center" class="display-4">Sistema de Gerenciamento de Biblioteca</h1>
+  <p class="lead">Um serviço dedicado a administradores e estudantes. Fornecemos recursos online, 
+    suporte profissional e orientação a todos os nossos alunos, sempre que e de onde quer que tenham 
+    escolhido estudar.</p>
   <hr class="my-4">
 
   <div class="row">
 
     <div class="col-lg-6">
       <img src="{% static "images/AdminIcon.png" %}" width="50%"  alt=""><br><br>
-        <a class="btn btn-danger btn-lg" style="text-align:center; border-radius:0px;" href="/adminclick" role="button">Admin Panel</a>
+        <a class="btn btn-danger btn-lg" style="text-align:center; border-radius:0px;" href="/adminclick" role="button">Painel do Administrador</a>
 
     </div>
 
     <div class="col-lg-6">
-      <img src="{% static "images/student.png" %}" width="50%"  alt=""><br><br>
-      <a class="btn btn-danger btn-lg" style="border-radius:0px;" href="/studentclick" role="button">Student Panel</a>
+      <img src="{% static "images/aluno.png" %}" width="50%"  alt=""><br><br>
+      <a class="btn btn-danger btn-lg" style="border-radius:0px;" href="/studentclick" role="button">Painel do Aluno</a>
     </div>
   </div>
 <hr class="my-4">

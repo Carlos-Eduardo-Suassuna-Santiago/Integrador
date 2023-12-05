@@ -19,16 +19,16 @@ class StudentExtra(models.Model):
 
 class Book(models.Model):
     catchoice= [
-        ('education', 'Education'),
-        ('entertainment', 'Entertainment'),
-        ('comics', 'Comics'),
-        ('biography', 'Biography'),
-        ('history', 'History'),
-        ('novel', 'Novel'),
-        ('fantasy', 'Fantasy'),
-        ('thriller', 'Thriller'),
-        ('romance', 'Romance'),
-        ('scifi','Sci-Fi')
+        ('Educação', 'Educação'),
+        ('Entretenimento', 'Entretenimento'),
+        ('Quadrinho', 'Quadrinho'),
+        ('Biografia', 'Biografia'),
+        ('História', 'História'),
+        ('Narrativa', 'Narrativa'),
+        ('Fantasia', 'Fantasia'),
+        ('Suspense', 'Suspense'),
+        ('Romance', 'Romance'),
+        ('Ficção Científica','Ficção Científica')
         ]
     name=models.CharField(max_length=30)
     isbn=models.PositiveIntegerField()
@@ -39,12 +39,12 @@ class Book(models.Model):
 
 
 def get_expiry():
-    return datetime.today() + timedelta(days=15)
+    return datetime.today() + timedelta(days=7)
 class IssuedBook(models.Model):
     #moved this in forms.py
-    #enrollment=[(student.enrollment,str(student.get_name)+' ['+str(student.enrollment)+']') for student in StudentExtra.objects.all()]
+    enrollment=[(student.enrollment,str(student.get_name)+' ['+str(student.enrollment)+']') for student in StudentExtra.objects.all()]
     enrollment=models.CharField(max_length=30)
-    #isbn=[(str(book.isbn),book.name+' ['+str(book.isbn)+']') for book in Book.objects.all()]
+    isbn=[(str(book.isbn),book.name+' ['+str(book.isbn)+']') for book in Book.objects.all()]
     isbn=models.CharField(max_length=30)
     issuedate=models.DateField(auto_now=True)
     expirydate=models.DateField(default=get_expiry)
