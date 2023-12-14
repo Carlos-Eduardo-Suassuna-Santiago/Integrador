@@ -87,7 +87,6 @@ def afterlogin_view(request):
 @login_required(login_url='adminlogin')
 @user_passes_test(is_admin)
 def addbook_view(request):
-    #now it is empty book form for sending to html
     form=forms.BookForm()
     if request.method=='POST':
         #now this form have data from html
