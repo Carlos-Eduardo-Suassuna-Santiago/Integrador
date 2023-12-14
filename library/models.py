@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from datetime import datetime,timedelta
+from datetime import datetime,timedelta,date
 
 class StudentExtra(models.Model):
     user=models.OneToOneField(User,on_delete=models.CASCADE)
@@ -48,5 +48,16 @@ class IssuedBook(models.Model):
     isbn=models.CharField(max_length=30)
     issuedate=models.DateField(auto_now=True)
     expirydate=models.DateField(default=get_expiry)
+    
     def __str__(self):
         return self.enrollment
+    
+class ReturnedBook(models.Model):
+    enrollment = models.CharField(max_length=30)
+    isbn = models.CharField(max_length=30)
+    returned_date = models.DateField(auto_now=True)
+
+    def __str__(self):
+        return self.enrollment
+    
+

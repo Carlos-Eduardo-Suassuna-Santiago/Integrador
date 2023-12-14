@@ -32,6 +32,6 @@ class BookForm(forms.ModelForm):
         fields=['name','isbn','author','category']
 class IssuedBookForm(forms.Form):
     #to_field_name value will be stored when form is submitted.....__str__ method of book model will be shown there in html
-    isbn2=forms.ModelChoiceField(queryset=models.Book.objects.all(),empty_label="Nome e ISBM", to_field_name="isbn",label='Nome e ISBM')
+    isbn2=forms.ModelChoiceField(queryset=models.Book.objects.all(),empty_label="Nome e ISBN", to_field_name="isbn",label='Nome e ISBN')
     enrollment2=forms.ModelChoiceField(queryset=models.StudentExtra.objects.all(),empty_label="Nome e Matrícula",to_field_name='enrollment',label='Nome e Matrícula')
     
