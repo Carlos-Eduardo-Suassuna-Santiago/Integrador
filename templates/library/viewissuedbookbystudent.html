@@ -61,7 +61,7 @@ border-radius: 5px;
   </head>
   <body>
   {% include "library/navbarstudent.html" %}<br><br>
-  <h3 class="p-3 mb-2 bg-danger text-white" style = 'font-size: 50px;text-align:center;'>Livros emprestados para você.</h3>
+  <h3 class="p-3 mb-2 bg-danger text-white" style = 'font-size: 50px;text-align:center;'>Livros Emprestados à Você</h3>
 
 <div class="row">
 
@@ -71,10 +71,10 @@ border-radius: 5px;
   <thead>
   <tr>
   <th>Nome</th>
-  <th>Matrícula</th>
+  <th>Matricula</th>
   <th>Curso</th>
-    <th>Nome do Livro</th>
-      <th>Autor</th>
+    <th>Livro</th>
+      <th>Author</th>
   </tr>
   </thead>
   <tfoot>
@@ -132,10 +132,15 @@ border-radius: 5px;
     </tbody>
     </table>
     {%else%}
-    <h1> Nenhum livro foi emprestado para você.</h1>
+    <h1> Nenhum Livro Emprestado à Você</h1>
     {%endif%}
 
 </div></div>
+
+
+
+
+
 
 <br><br><br><br><br><br>
 <br><br><br>

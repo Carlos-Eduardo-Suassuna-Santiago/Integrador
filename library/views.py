@@ -47,9 +47,6 @@ def adminsignup_view(request):
 
 
 
-
-
-
 def studentsignup_view(request):
     form1=forms.StudentUserForm()
     form2=forms.StudentExtraForm()
@@ -105,7 +102,6 @@ def viewbook_view(request):
 
 
 
-
 @login_required(login_url='adminlogin')
 @user_passes_test(is_admin)
 def issuebook_view(request):
@@ -135,8 +131,8 @@ def viewissuedbook_view(request):
         print(date.today())
         d=days.days
         fine=0
-        if d>15:
-            day=d-15
+        if d>7:
+            day=d-7
             fine=day*10
 
 
@@ -177,8 +173,8 @@ def viewissuedbookbystudent(request):
         print(date.today())
         d=days.days
         fine=0
-        if d>15:
-            day=d-15
+        if d>7:
+            day=d-7
             fine=day*10
         t=(issdate,expdate,fine)
         li2.append(t)

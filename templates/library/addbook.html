@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>SGBO Django</title>
+    <title>LMS Django</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -96,7 +96,7 @@
     <div class="signup-form">
         <form  method="post" class="form-horizontal">
 
-    			<center><h2>CADASTRAR LIVRO NA BIBLIOTECA</h2></center>
+    			<center><h2>Cadastrar Livro na Biblioteca</h2></center>
 
 		{% csrf_token %}
 
@@ -112,12 +112,15 @@
 
     		<div class="form-group text-center">
     			<div class="col-xs-8 col-xs-offset-4">
-            <button type="submit" class="btn btn-success btn-lg" style="border-radius: 0%;">ADICIONAR</button>
+            <button type="submit" class="btn btn-success btn-lg" style="border-radius: 0%;">Adicionar</button>
     			</div>
     		</div>
         </form>
-    	<div class="text-center">Livros Disponíveis na Biblioteca <a href="viewbook">Clique aqui</a></div>
+    	<div class="text-center">Visualizar Livros Disponíveis na Biblioteca  <a href="viewbook">Clique aqui</a></div>
     </div>
+
+
+
 
     {% include "library/footer.html" %}
   </body>

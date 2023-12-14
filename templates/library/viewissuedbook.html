@@ -67,19 +67,18 @@
       <table class="table table-hover table-condensed table-striped table-bordered">
         <thead>
         <tr>
-        <th>Nome do Aluno</th>
+        <th>Nome</th>
         <th>Matrícula</th>
-        <th>Nome do Livro</th>
+        <th>Livro</th>
         <th>Autor</th>
         <th>Emprestado</th>
-        <th>Data de Vencimento</th>
+        <th>Data de Expiração</th>
         <th>Multa</th>
-        <th>Devolução</th>
         </tr>
         </thead>
         <tfoot>
         <tr>
-        <td colspan="8">
+        <td colspan="7">
         <div class="links"></div>
         </td>
         </tr>
@@ -93,20 +92,14 @@
               <td>{{t.3}}</td>
               <td>{{t.4}}</td>
               <td>{{t.5}}</td>
-              <td>{{t.6}}</td>  
-              <td>
-                <form method="post" action="{% url 'return_book' t.1 t.2 %}">
-                  {% csrf_token %}
-                  <input type="submit" value="Devolver Livro">
-                </form>
-              </td>
+              <td>{{t.6}}</td>
             </tr>
             {%endfor%}
         </tbody>
         </table>
     </div>
     {%else%}
-    <h1> Nenhum livro emprestado.</h1>
+    <h1> Nenhum Livro Emprestado</h1>
     {%endif%}
 
     <br><br><br><br><br><br><br><br><br>
