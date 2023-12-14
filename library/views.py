@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from django.shortcuts import get_object_or_404
 from django.http import HttpResponseRedirect
 from . import forms,models
 from django.http import HttpResponseRedirect
@@ -48,6 +47,9 @@ def adminsignup_view(request):
 
 
 
+
+
+
 def studentsignup_view(request):
     form1=forms.StudentUserForm()
     form2=forms.StudentExtraForm()
@@ -71,6 +73,7 @@ def studentsignup_view(request):
 
 
 
+
 def is_admin(user):
     return user.groups.filter(name='ADMIN').exists()
 
@@ -84,6 +87,7 @@ def afterlogin_view(request):
 @login_required(login_url='adminlogin')
 @user_passes_test(is_admin)
 def addbook_view(request):
+    #now it is empty book form for sending to html
     form=forms.BookForm()
     if request.method=='POST':
         #now this form have data from html
@@ -98,6 +102,7 @@ def addbook_view(request):
 def viewbook_view(request):
     books=models.Book.objects.all()
     return render(request,'library/viewbook.html',{'books':books})
+
 
 
 
@@ -191,13 +196,6 @@ def contactus_view(request):
             email = sub.cleaned_data['Email']
             name=sub.cleaned_data['Name']
             message = sub.cleaned_data['Message']
-            send_mail(str(name)+' || '+str(email),message, EMAIL_HOST_USER, ['carloseduardosuassunasantiago@gmail.com'], fail_silently = False)
+            send_mail(str(name)+' || '+str(email),message, EMAIL_HOST_USER, ['wapka1503@gmail.com'], fail_silently = False)
             return render(request, 'library/contactussuccess.html')
     return render(request, 'library/contactus.html', {'form':sub})
-
-@login_required(login_url='adminlogin')
-@user_passes_test(is_admin)
-def return_book_view(request, enrollment, isbn):
-    issued_book = get_object_or_404(models.IssuedBook, enrollment=enrollment, isbn=isbn)
-    issued_book.return_book()  # Adiciona o livro à lista de devolvidos
-    return render(request, 'library/bookreturned.html')
