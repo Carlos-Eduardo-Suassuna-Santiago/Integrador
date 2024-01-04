@@ -259,7 +259,7 @@ def viewissuedbook(request):
         issuedbooks_list = IssueBook.objects.all()
 
         # Número de livros emitidos por página
-        livros_por_pagina = 7
+        livros_por_pagina = 2
         paginator = Paginator(issuedbooks_list, livros_por_pagina)
 
         # Obtenha o número da página a ser exibido a partir dos parâmetros da URL

@@ -215,21 +215,21 @@ ul li:hover a{
       {% endfor %}
   </div>
 </div>
-    <div class="pagination">
-      <span class="step-links">
-          {% if issuedbooks.has_previous %}
-              <a href="?page={{ issuedbooks.previous_page_number }}">anterior</a>
-          {% endif %}
+  <div class="pagination">
+    <span class="step-links">
+        {% if issuedbooks.has_previous %}
+            <a href="?page={{ issuedbooks.previous_page_number }}">anterior</a>
+        {% endif %}
 
-          <span class="current">
-              Página {{ issuedbooks.number }} de {{ issuedbooks.paginator.num_pages }}.
-          </span>
+        <span class="current">
+            Página {{ issuedbooks.number }} de {{ issuedbooks.paginator.num_pages }}.
+        </span>
 
-          {% if issuedbooks.has_next %}
-              <a href="?page={{ issuedbooks.next_page_number }}">próximo</a>
-          {% endif %}
-      </span>
-  </div>
+        {% if issuedbooks.has_next %}
+            <a href="?page={{ issuedbooks.next_page_number }}">próximo</a>
+        {% endif %}
+    </span>
+</div>
 </div>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
