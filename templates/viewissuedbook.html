@@ -151,7 +151,7 @@ ul li:hover a{
     padding:14px 9px 0px 90px;
     vertical-align:center;
     border:1px solid #000000;
-
+}
 .table tbody tr td 
 {
     font-size:14 px;
@@ -161,6 +161,25 @@ ul li:hover a{
     padding:8px 0px 0px 13px;
     text-align:center;
     border:1px solid #000000;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: yellow ;
+}
+
+.card-header {
+  font-weight: bold;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+
+.card-info {
+  margin-bottom: 7px;
 }
 </style>
 </head>
@@ -181,34 +200,21 @@ ul li:hover a{
   <li><a href="/HandleLogout/"><i class="fa fa-user"></i> Sair</a></li>
 </ul>
 <div class="box-1">
-<div class="table-container">
-                                    <table class="table" id="dataTable" width="100%" cellspacing="0">
-                                       <thead>
-                                            <tr>
-                                                <th>Nome do Aluno</th>
-                                                <th>Matrícula </th>
-                                                <th>Titulo</th>
-                                                <th>Categoria</th>
-                                                <th>Data do Empréstimo</th>
-                                                <th>Data de Devolução</th>
-                                                <th>Multa</th>
-                                            </tr>
-                                        </thead>
-                                    {% for info in lis %}
-                                            <tr>
-                                                <td>{{info.0}}</td>
-                                                <td>{{info.1}}</td>
-                                                <td>{{info.2}}</td>
-                                                <td>{{info.3}}</td>
-                                                <td>{{info.4}}</td>
-                                                <td>{{info.5}}</td>
-                                                <td>{{info.6}}</td>
-                                                
-                                            </tr>
-                                    {% endfor %}
-                                    </tbody>
-                                    </table>
-    </div>
+  <div class="table-container">
+      {% for info in lis %}
+          <div class="card">
+              <div class="card-header">Informações do Empréstimo</div>
+              <div class="card-info"><strong>Nome do Aluno:</strong> {{info.0}}</div>
+              <div class="card-info"><strong>Matrícula:</strong> {{info.1}}</div>
+              <div class="card-info"><strong>Título:</strong> {{info.2}}</div>
+              <div class="card-info"><strong>Categoria:</strong> {{info.3}}</div>
+              <div class="card-info"><strong>Data do Empréstimo:</strong> {{info.4}}</div>
+              <div class="card-info"><strong>Data de Devolução:</strong> {{info.5}}</div>
+              <div class="card-info"><strong>Multa:</strong> {{info.6}}</div>
+          </div>
+      {% endfor %}
+  </div>
+</div>
     <div class="pagination">
       <span class="step-links">
           {% if issuedbooks.has_previous %}

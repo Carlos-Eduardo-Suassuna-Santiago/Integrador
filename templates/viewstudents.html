@@ -105,7 +105,6 @@ ul li:hover a{
   background: #ccc;
 }
 
-/* Add responsiveness - On small screens, display the navbar vertically instead of horizontally */
 @media screen and (max-width: 600px) {
   .topnav .search-container {
     float: none;
@@ -151,7 +150,7 @@ ul li:hover a{
     padding:14px 9px 0px 120px;
     vertical-align:center;
     border:1px solid #000000;
-
+}
 .table tbody tr td 
 {
     font-size:14 px;
@@ -161,6 +160,31 @@ ul li:hover a{
     padding:8px 0px 0px 15px;
     text-align:center;
     border:1px solid #000000;
+}
+
+.box-1{
+  position:relative; 
+  left:300px; 
+  top:-600px;
+}
+
+.table-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.w3-card-4 {
+  margin: 20px;
+  border: 1px solid #ddd;
+  border-radius: 20px
+}
+
+.w3-container {
+  padding: 16px;
+}
+
+.w3-button {
+  margin: 8px;
 }
 </style>
 </head>
@@ -189,27 +213,20 @@ ul li:hover a{
   <li><a href="/returnbook/"><i class="fas fa-exchange-alt"></i> Devolver Livro</a></li>
   <li><a href="/HandleLogout/"><i class="fa fa-user"></i> Sair</a></li>
 </ul>
+
 <div class="box-1">
-<div class="table-container">
-                                    <table class="table" id="dataTable" width="100%" cellspacing="0">
-                                       <thead>
-                                            <tr>
-                                                <th>Nome do Aluno</th>
-                                                <th>Matrícula</th>
-                            
-                                            </tr>
-                                        </thead>
-                                    <!-- Adicione esta parte ao início da sua tabela ou onde deseja exibir os alunos -->
-                                      {% for student in students %}
-                                        <tr>
-                                            <td data-label="studentid">{{ student.studentid }}</td>
-                                            <td data-label="sname">{{ student.sname }}</td>
-                                            <!-- Adicione outros campos conforme necessário -->
-                                        </tr>
-                                      {% endfor %}
-                                    </tbody>
-                                    </table>
-    </div>
+  <div class="table-container">
+    {% for student in students %}
+      <div class="w3-card-4">
+        <header class="w3-container w3-yellow">
+          <h3>{{  student.sname }}</h3>
+        </header>
+        <div class="w3-container">
+          <h5><strong>Matrícula</strong> {{ student.studentid }}</h5>
+        </div> 
+      </div>
+    {% endfor %}
+  </div>
     <!-- Adicione esta parte para a navegação da página -->
     <div class="pagination">
       <span class="step-links">

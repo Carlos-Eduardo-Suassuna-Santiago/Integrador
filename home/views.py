@@ -27,7 +27,7 @@ def dashboard(request):
         books_list = AddBook.objects.all()
 
         # Número de livros por página
-        livros_por_pagina = 3
+        livros_por_pagina = 4
         paginator = Paginator(books_list, livros_por_pagina)
 
         # Obtenha o número da página a ser exibido a partir dos parâmetros da URL
@@ -215,7 +215,7 @@ def viewstudents(request):
         students_list = AddStudent.objects.all()
 
         # Número de alunos por página
-        alunos_por_pagina = 10
+        alunos_por_pagina = 6
         paginator = Paginator(students_list, alunos_por_pagina)
 
         # Obtenha o número da página a ser exibido a partir dos parâmetros da URL
