@@ -176,6 +176,7 @@ ul li:hover a{
   font-weight: bold;
   border-bottom: 1px solid #ddd;
   margin-bottom: 10px;
+  
 }
 
 .card-info {
@@ -214,7 +215,6 @@ ul li:hover a{
           </div>
       {% endfor %}
   </div>
-</div>
   <div class="pagination">
     <span class="step-links">
         {% if issuedbooks.has_previous %}
@@ -229,6 +229,7 @@ ul li:hover a{
             <a href="?page={{ issuedbooks.next_page_number }}">próximo</a>
         {% endif %}
     </span>
+</div>
 </div>
 </div>
 </body>
