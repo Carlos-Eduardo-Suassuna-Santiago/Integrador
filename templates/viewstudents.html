@@ -9,6 +9,7 @@
     <style>
     body{
     font-family:'Roboto','sans-serif';
+    background-color: gray;
 }
 *{
     margin:0;
@@ -174,13 +175,16 @@ ul li:hover a{
 }
 
 .w3-card-4 {
+  background-color: white;
   margin: 20px;
   border: 1px solid #ddd;
   border-radius: 20px
+  
 }
 
 .w3-container {
   padding: 16px;
+  background-color: white;
 }
 
 .w3-button {
@@ -218,8 +222,8 @@ ul li:hover a{
   <div class="table-container">
     {% for student in students %}
       <div class="w3-card-4">
-        <header class="w3-container w3-yellow">
-          <h3>{{  student.sname }}</h3>
+        <header class="w3-container w3-white">
+          <h4>{{  student.sname }}</h4>
         </header>
         <div class="w3-container">
           <h5><strong>Matrícula</strong> {{ student.studentid }}</h5>
