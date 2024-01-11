@@ -1,7 +1,7 @@
 from django.contrib import admin
 from .models import AddBook,IssueBook,ReturnBook,AddStudent
 
-# Register your models here.
+# Extendendo o modelo de usuário padrão do Django (AbstractUser), adicionando campos personalizados. / Registrado no admin para que possa ser gerenciado por meio da interface de administração.
 from django.contrib.sessions.models import Session
 admin.site.register(Session)
 from .models import UserExtend

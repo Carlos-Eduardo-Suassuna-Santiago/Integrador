@@ -23,8 +23,8 @@ def staffsignup(request):
     return render(request,'staffsignup.html')
 
 def dashboard(request):
-    if request.session.has_key('is_logged'):
-        books_list = AddBook.objects.all()
+    if request.session.has_key('is_logged'):# Verifica se a chave 'is_logged' está presente na sessão do usuário.
+        books_list = AddBook.objects.all() # Se o usuário estiver logado, recupera todos os objetos da classe AddBook.
 
         # Número de livros por página
         livros_por_pagina = 4
@@ -179,18 +179,18 @@ def returnbooksubmission(request):
             return render(request,'returnbook.html',{'Return':Return})
     return redirect('/')
 
-def Search(request):
-    if request.session.has_key('is_logged'):
-        query2=request.GET["query2"]
+def Search(request): 
+    if request.session.has_key('is_logged'): # Verifica se a chave 'is_logged' está presente na sessão do usuário.
+        query2=request.GET["query2"]# Recupera o parâmetro 'query2' da solicitação GET.
         Book=AddBook.objects.filter(bookid__icontains=query2)
-        params={'Book':Book}
-        return render(request,'dashboard.html',params)
-    return redirect("login") 
+        params={'Book':Book} # Realiza uma consulta no banco de dados para encontrar livros cujo ID contenha a 'query2'.
+        return render(request,'dashboard.html',params) # Cria um dicionário de parâmetros para serem passados para o template.
+    return redirect("login")  # Renderiza o template 'dashboard.html', passando os parâmetros para o contexto.
 
 def editbookdetails(request,id):
     if request.session.has_key('is_logged'):
         Book = AddBook.objects.get(id=id)
-        return render(request,'editdetails.html',{'Book':Book})
+        return render(request,'editdetails.html',{'Book':Book}) # Se o usuário não estiver logado, redireciona para a página de login.
     return redirect('login')
 
 def updatedetails(request,id):
