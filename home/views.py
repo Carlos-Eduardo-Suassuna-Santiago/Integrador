@@ -23,8 +23,8 @@ def staffsignup(request):
     return render(request,'staffsignup.html')
 
 def dashboard(request):
-    if request.session.has_key('is_logged'):
-        books_list = AddBook.objects.all()
+    if request.session.has_key('is_logged'):# Verifica se a chave 'is_logged' está presente na sessão do usuário.
+        books_list = AddBook.objects.all() # Se o usuário estiver logado, recupera todos os objetos da classe AddBook.
 
         # Número de livros por página
         livros_por_pagina = 4
